@@ -1,0 +1,6 @@
+package com.qap4.exercise1;
+
+public enum ShapeName {
+
+    UNKNOWN, ELLIPSE, CIRCLE, TRIANGLE,EQUILATERAL_TRIANGLE, ISOSCELES_TRIANGLE, SCALENE_TRIANGLE
+}

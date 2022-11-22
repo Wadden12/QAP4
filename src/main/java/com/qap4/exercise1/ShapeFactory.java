@@ -32,4 +32,22 @@ public class ShapeFactory {
       }
 
     }
+
+    public static CircularShapes circularFactory(String colour, boolean filled, double majorAxis, double minorAxis){
+    boolean check;
+    check = Helper.isValidCircularShape(majorAxis, minorAxis);
+        if(!check){
+            throw new IllegalArgumentException("Error invalid negative values");
+        }
+        // this is to check to make sure the major axis is the larger number
+        double checkedMajorAxis = Helper.largerInputCheck(majorAxis, minorAxis);
+        double checkedMinorAxis = Helper.smallerInputCheck(majorAxis, minorAxis);
+
+        if(checkedMinorAxis == checkedMajorAxis){
+             return  new Circle(colour, filled, checkedMajorAxis);
+        } else{
+            return new Ellipse(colour, filled, majorAxis, minorAxis);
+        }
+    }
+
 }

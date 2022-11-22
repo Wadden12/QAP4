@@ -71,7 +71,7 @@ public class IsoscelesTriangle implements Triangle {
         return this.baseLength;
     }
 
-    // returns the area of a Isosceles triangles using 3 sides
+    // returns the area of an Isosceles triangles using 3 sides
     @Override
     public double getArea() {
         double base = getSideThreeLength();

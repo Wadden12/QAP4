@@ -14,7 +14,27 @@ public class Helper {
             return false;
         else
             return true;
-
     }
+// making sure no negative numbers
+    public static boolean isValidCircularShape(double radius){
+        return((!(radius < 0)));
+    }
+
+    public static boolean isValidCircularShape( double majorAxis, double minorAxis){
+        return((!(minorAxis < 0 || majorAxis < 0)));
+    }
+
+    public static double largerInputCheck (double majorAxis, double minorAxis){
+        if(majorAxis == minorAxis) return majorAxis;
+        return(Math.max(majorAxis, minorAxis));
+    }
+
+    public static double smallerInputCheck (double majorAxis, double minorAxis){
+        if(majorAxis == minorAxis) return minorAxis;
+        return(Math.min(majorAxis, minorAxis));
+    }
+
+
+
 
 }

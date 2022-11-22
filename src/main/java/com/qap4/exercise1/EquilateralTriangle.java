@@ -1,6 +1,6 @@
 package com.qap4.exercise1;
 
-public class EquilateralTriangle implements Triangle {
+public class EquilateralTriangle implements Triangle{
 
 
     private  double side_length;
@@ -77,6 +77,20 @@ public class EquilateralTriangle implements Triangle {
     @Override
     public double getPerimeter() {
         return (getSideOneLength() * 3);
+    }
+
+    @Override
+    public void scaleUp(double increaseAmount) {
+        double newSideValue = Helper.percentageIncrease( getSideOneLength(), increaseAmount);
+        setSide_length(newSideValue);
+    }
+
+    @Override
+    public void scaleDown(double decreaseAmount) {
+
+        double newSideValue = Helper.percentageDecrease(getSideOneLength(), decreaseAmount);
+        setSide_length(newSideValue);
+
     }
 
     // since all the sides are the same return is used

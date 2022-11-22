@@ -75,4 +75,24 @@ public class Ellipse implements CircularShapes{
         double e2 = Math.pow((a-b),2)/2;
         return (PI * Math.sqrt(e1 - e2));
     }
+
+    @Override
+    public void scaleUp(double increaseAmount) {
+
+        double newMajorAxis = Helper.percentageIncrease(getMajorAxis(), increaseAmount);
+        double newMinorAxis = Helper.percentageIncrease(getMinorAxis(), increaseAmount);
+
+        setMajorAxis(newMajorAxis);
+        setMinorAxis(newMinorAxis);
+
+    }
+
+    @Override
+    public void scaleDown(double decreaseAmount) {
+        double newMajorAxis = Helper.percentageDecrease(getMajorAxis(),decreaseAmount);
+        double newMinorAxis = Helper.percentageDecrease(getMinorAxis(), decreaseAmount);
+        setMajorAxis(newMajorAxis);
+        setMinorAxis(newMinorAxis);
+
+    }
 }

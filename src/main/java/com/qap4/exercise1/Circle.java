@@ -69,4 +69,20 @@ public class Circle  implements CircularShapes{
     public double getPerimeter() {
         return (2* PI * getMajorAxis());
     }
+
+    // checks to make the input amountis valid then increases the size
+    @Override
+    public void scaleUp(double increaseAmount) {
+        double newValue = Helper.percentageIncrease(getMajorAxis(), increaseAmount);
+        setRadius(newValue);
+    }
+
+    // checks to see if the increase amount is valid then decreases the size
+    @Override
+    public void scaleDown(double decreaseAmount) {
+        double newValue = Helper.percentageDecrease(getMajorAxis(), decreaseAmount);
+        setRadius(newValue);
+    }
+
+
 }

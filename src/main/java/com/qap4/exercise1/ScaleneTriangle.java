@@ -89,4 +89,28 @@ public class ScaleneTriangle implements Triangle{
         return (getSideOneLength() + getSideTwoLength() +getSideThreeLength());
     }
 
+    @Override
+    public void scaleUp(double increaseAmount) {
+
+        double newSideOne = Helper.percentageIncrease(getSideOneLength(), increaseAmount);
+        double newSideTwo = Helper.percentageIncrease(getSideTwoLength(), increaseAmount);
+        double newSideThree = Helper.percentageIncrease(getSideThreeLength(), increaseAmount);
+
+        setSideOne(newSideOne);
+        setSideTwo(newSideTwo);
+        setSideThree(newSideThree);
+    }
+
+    @Override
+    public void scaleDown(double decreaseAmount) {
+
+        double newSideOne = Helper.percentageDecrease(getSideOneLength(), decreaseAmount);
+        double newSideTwo = Helper.percentageDecrease(getSideTwoLength(), decreaseAmount);
+        double newSideThree = Helper.percentageDecrease(getSideThreeLength(), decreaseAmount);
+
+        setSideOne(newSideOne);
+        setSideTwo(newSideTwo);
+        setSideThree(newSideThree);
+
+    }
 }

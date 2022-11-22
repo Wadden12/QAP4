@@ -86,6 +86,24 @@ public class IsoscelesTriangle implements Triangle {
         return (getSideOneLength() + getSideTwoLength() + getSideThreeLength());
     }
 
+    // only need to update two value since two sides of the triangle are the same
+    @Override
+    public void scaleUp(double increaseAmount) {
 
+        double newEqualSide = Helper.percentageIncrease(getSideOneLength(), increaseAmount);
+        double newBase = Helper.percentageIncrease(getSideThreeLength(), increaseAmount);
 
+        setEqualSidesLength(newEqualSide);
+        setBaseLength(newBase);
+
+    }
+
+    @Override
+    public void scaleDown(double decreaseAmount) {
+        double newEqualSide = Helper.percentageDecrease(getSideOneLength(), decreaseAmount);
+        double newBase = Helper.percentageDecrease(getSideThreeLength(), decreaseAmount);
+        setEqualSidesLength(newEqualSide);
+        setBaseLength(newBase);
+
+    }
 }
